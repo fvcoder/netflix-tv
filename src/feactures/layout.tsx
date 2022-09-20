@@ -5,7 +5,9 @@ export function Layout(): JSX.Element {
   return (
     <div className="relative w-full">
       <Navbar />
-      <Outlet />
+      <div className="pl-[8vw]">
+        <Outlet />
+      </div>
     </div>
   );
 }
