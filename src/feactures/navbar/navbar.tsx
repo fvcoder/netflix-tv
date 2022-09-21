@@ -11,7 +11,7 @@ export function Navbar(): JSX.Element {
   return (
     <nav
       className={classnames(
-        "top-0 bottom-0 left-0 h-full w-[8vw] transition-colors duration-300 bg-black fixed"
+        "top-0 bottom-0 left-0 h-full w-[8vw] transition-colors duration-300 bg-transparent fixed z-10"
       )}
     >
       <ul className="w-full h-full flex flex-col items-center justify-center gap-12">
