@@ -1,56 +1,11 @@
-import {
-  PlayIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@heroicons/react/24/solid";
+import { PlayIcon } from "@heroicons/react/24/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { discoverMovie } from "../lib/discover.movie";
 import { MovieSmall } from "../lib/base";
+import { TitleList } from "../feactures/titleList/titlelist";
 
 // import yt from "youtube-suggest";
-
-export interface TitleListProps {
-  title: MovieSmall[];
-}
-
-function TitleList({ title }: TitleListProps): JSX.Element {
-  return (
-    <section className="mb-4">
-      <header className="flex justify-between py-4 pr-4">
-        <h1 className="text-xl font-bold text-[#e5e5e5] leading-none">
-          Title section
-        </h1>
-        <div>
-          <button className="rounded-full inline-block mr-2">
-            <ChevronLeftIcon className="w-5 h-5" />
-          </button>
-          <button className="rounded-full inline-block">
-            <ChevronRightIcon className="w-5 h-5" />
-          </button>
-        </div>
-      </header>
-      <div className="relative">
-        <div className="flex items-center gap-4 h-full overflow-x-auto scroll-hidden">
-          {title?.map((x, i) => (
-            <div
-              className="w-[300px] flex-shrink-0 flex-grow-0 flex"
-              key={`title-discover-${i}`}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w300${x.backdrop_path}`}
-                alt={x.title}
-                className="w-full h-full"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function IndexPage(): JSX.Element {
   const [title, setTitle] = useState<MovieSmall>();
   const [discover, setDiscover] = useState<MovieSmall[]>();
