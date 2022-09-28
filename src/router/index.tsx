@@ -77,6 +77,16 @@ export default function IndexPage(): JSX.Element {
         <TitleList title={discover ?? []} />
         <TitleList title={discover ?? []} />
         <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
+        <TitleList title={discover ?? []} />
       </div>
     </>
   );
