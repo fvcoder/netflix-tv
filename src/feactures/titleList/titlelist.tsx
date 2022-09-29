@@ -3,6 +3,7 @@ import { MovieSmall } from "../../lib/base";
 import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { DialogContent } from "../dialog/dialog";
+import { TitleExpand } from "../title/title.expand";
 
 export interface TitleListProps {
   title: MovieSmall[];
@@ -61,16 +62,7 @@ export function TitleList({ title }: TitleListProps): JSX.Element {
             className="flex items-center gap-[1vw] h-full pr-4 overflow-x-auto scroll-hidden"
           >
             {items?.map((x, i) => (
-              <div
-                className="w-[20vw] flex-shrink-0 flex-grow-0 flex"
-                key={`title-discover-${i}`}
-              >
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${x.backdrop_path}`}
-                  alt={x.title}
-                  className="w-full h-full"
-                />
-              </div>
+              <TitleExpand data={x} key={`title-discover-${i}`} />
             ))}
           </div>
         </div>
