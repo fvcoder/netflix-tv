@@ -7,9 +7,10 @@ import { TitleExpand } from "../title/title.expand";
 
 export interface TitleListProps {
   title: MovieSmall[];
+  name: string;
 }
 
-export function TitleList({ title }: TitleListProps): JSX.Element {
+export function TitleList({ title, name }: TitleListProps): JSX.Element {
   const [page, setPage] = useState(0);
   const items = title.slice(0, 8 - title.length);
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ export function TitleList({ title }: TitleListProps): JSX.Element {
         <header className="flex justify-between py-4 pr-4 select-none">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold text-[#e5e5e5] leading-none">
-              Title section
+              {name}
             </h1>
             <Dialog.Trigger asChild>
               <small className="text-blue-400 flex items-center gap-1 opacity-50 hover:opacity-90 focus:opacity-90 active:opacity-100 transition-all duration-300">

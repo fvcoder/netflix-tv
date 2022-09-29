@@ -4,6 +4,7 @@ import { DialogContent } from "../dialog/dialog";
 import { recommendationsMovie } from "../../lib/recommendations.movie";
 import { useState } from "react";
 import classNames from "classnames";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
 interface TitleExpandProps {
   data: MovieSmall;
@@ -14,7 +15,9 @@ export function TitleExpand({ data, fluid }: TitleExpandProps): JSX.Element {
   function getSuggestionOnOpen(e: boolean): void {
     if (e) {
       recommendationsMovie(data.id)
-        .then((s) => setRecommendations(s.results))
+        .then((s) =>
+          setRecommendations(s.results.filter((x) => x.backdrop_path !== null))
+        )
         .catch(console.log);
     }
   }
@@ -50,6 +53,17 @@ export function TitleExpand({ data, fluid }: TitleExpandProps): JSX.Element {
             <p className="text-base font-light text-white/50 mt-2">
               {data.overview}
             </p>
+            <a
+              href={`https://www.themoviedb.org/movie/${data.id}`}
+              rel="noreferrer"
+              target="_blank"
+              className="bg-[#6d6d6e]/70 text-white pl-6 pr-7 py-2 mt-4 rounded select-none relative inline-flex items-center gap-2 cursor-pointer z-0"
+            >
+              <InformationCircleIcon className="w-5 h-5" />
+              <span className="text-md leading-none font-semibold">
+                More Info
+              </span>
+            </a>
             <div className="w-full mt-6 grid gap-4 grid-cols-3">
               {recommendations?.map((x, i) => (
                 <TitleExpand
