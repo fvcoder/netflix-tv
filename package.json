@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --base https://thefersh.github.io/netflix-tv/",
+    "prebuild": "node prebuild.js",
+    "build-local": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
