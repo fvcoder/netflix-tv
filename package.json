@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base https://thefersh.github.io/netflix-tv/",
+    "build": "tsc && vite build --base https://fvcoder.github.io/netflix-tv/",
     "build-local": "tsc && vite build",
     "preview": "vite preview"
   },
